@@ -123,7 +123,7 @@ const PatientPortal = () => {
                     </div>
                 ) : (
                     <div className="notification">
-                        <p>No reminder available at this time.</p>
+                        
                     </div>
                 )}
                 {nextTreatmentDate ? (

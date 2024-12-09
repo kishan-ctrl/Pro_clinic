@@ -3,11 +3,9 @@ package com.example.Clinic_Back.Service.auth;
 import com.example.Clinic_Back.Entity.Appointment;
 import com.example.Clinic_Back.Repository.AppointmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -46,20 +44,20 @@ public class AppointmentService {
             return appointmentRepository.save(existingAppointment);
         }
 
-        return null; // Return null if the appointment does not exist
+        return null;
     }
 
     // Get appointment by ID
     public Appointment getAppointmentById(String id) {
-        return appointmentRepository.findById(id).orElse(null); // Return null if not found
+        return appointmentRepository.findById(id).orElse(null);
     }
 
     public boolean deleteAppointment(String id) {
-        if (appointmentRepository.existsById(id)) { // Ensure the ID exists in the repository
-            appointmentRepository.deleteById(id);   // Delete the appointment
-            return true;                            // Return true if successful
+        if (appointmentRepository.existsById(id)) {
+            appointmentRepository.deleteById(id);
+            return true;
         }
-        return false;                               // Return false if the ID is not found
+        return false;
     }
 
 
